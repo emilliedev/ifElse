@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 06</title>
+</head>
+
+<body>
+    <div id="campoEnunciado"></div>
+    <button onclick="enunciado()">Ver enunciado</button>
+    <!-- ENUNCIADO DA ATIVIDADE
+    6. Crie um programa em HTML/JS o qual:
+        a) Solicita a temperatura do ambiente;
+        b) Ao clicar em "Verificar clima", determine se o clima está:
+            Apropriada p/ conservar alimento - Caso a temperatura for menor que 10;
+            Inapropriada p/ conservar alimento - Caso a temperatura for a partir de 10;
+        c) Em caso de temperatura apropriada, exiba a figura de um alimento em bom estado; Caso contrário, exiba a imagem de um alimento estragado. -->
+
+    <h1>Como está o clima?</h1>
+    <h3>Verificação do clima com possibilidades entre <span style="color: #02bf44;">Apropriada</span> e <span style="color: #bf022e;">Inapropriada</span></h3>
+
+    <div>
+        <span>Digite a temperatura</span>
+    </div>
+    <div>
+        <input type="number" id="iptTemperatura">
+    </div>
+    <div>
+        <button onclick="verificarClima()">Verificar clima</button>
+    </div>
+    <div>
+        <h2 id="campoTexto"></h2>
+    </div>
+    <div>
+        <img id="campoImagem" style="width: 300px;">
+    </div>
+</body>
+
+</html>
+
+<script>
+    function verificarClima() {
+        var temperatura = Number(iptTemperatura.value);
+
+        if (temperatura < 10) {
+            campoTexto.innerHTML = `<div style="color: #02bf44">Clima apropriado para conservar alimento</div>`
+            document.getElementById("campoImagem").src = 'images/tomate-fresco.jpg'
+        }else{
+            campoTexto.innerHTML = `<div style="color: #bf022e">Clima inapropriado para conservar alimento</div>`
+            document.getElementById("campoImagem").src = 'images/tomate-estragado.jpg'
+        }
+    }
+
+    function enunciado() {
+        campoEnunciado.innerHTML = `<div style="color: #707070;">6. Crie um programa em HTML/JS o qual:
+        a) Solicita a temperatura do ambiente;
+        b) Ao clicar em "Verificar clima", determine se o clima está:
+            Apropriada p/ conservar alimento - Caso a temperatura for menor que 10;
+            Inapropriada p/ conservar alimento - Caso a temperatura for a partir de 10;
+        c) Em caso de temperatura apropriada, exiba a figura de um alimento em bom estado; Caso contrário, exiba a imagem de um alimento estragado.</div>`
+    }
+</script>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 03</title>
+</head>
+<body>
+    <div id="campoEnunciado"></div>
+    <button onclick="enunciado()">Ver enunciado</button>
+    <!-- ENUNCIADO DA ATIVIDADE
+    3. Refaça a questão 6 da lista "Estrutura de decisão IF" (da pizza) de tal forma que, caso o valor por amigo fique em até 20,00 deve aparecer a frase "Uhu! Vamos pedir a pizza!". -->
+    <div>Digite o valor da pizza</div>
+    <div><input type="number" id="iptValorPizza">
+    </div>
+    <div>Digite a quantidade de amigos</div>
+    <div><input type="number" id="iptQtdeAmigos">
+    </div>
+    <button onclick="calcularTotal()">Rola a pizza?</button>
+    <div id="divResultado"></div>
+</body>
+</html>
+<script>
+    function calcularTotal() {
+        var valorPizza = Number(iptValorPizza.value);
+        var qtdeAmigos = Number(iptQtdeAmigos.value);
+
+        var divisao = valorPizza / qtdeAmigos;
+
+        divResultado.innerHTML = `Cada amigo vai pagar R$${divisao}`
+
+        if (divisao > 20) {
+            divResultado.innerHTML += `<br>Deu ruim! Pizza muito cara!`
+        }else{
+            divResultado.innerHTML += `<br>Uhu! Vamos pedir a pizza!`
+        }
+    }
+    function enunciado() {
+        campoEnunciado.innerHTML = `<div style="color: #707070;">3. Refaça a questão 6 da lista "Estrutura de decisão IF" (da pizza) de tal forma que, caso o valor por amigo fique em até 20,00 deve aparecer a frase "Uhu! Vamos pedir a pizza!".</div>`
+    }
+</script>

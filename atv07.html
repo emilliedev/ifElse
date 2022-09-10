@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 07</title>
+</head>
+
+<body>
+    <div id="campoEnunciado"></div>
+    <button onclick="enunciado()">Ver enunciado</button>
+
+    <!-- ENUNCIADO DA ATIVIDADE
+    7. Crie um programa em HTML/JS o qual:
+        a) Pergunta o tempo que deixou o arroz cozinhando;
+        b) Ao clicar em "Provar arroz", verifica se o cozimento foi perfeito. Um cozimento perfeito é de 5 minutos, exatamente;
+        c) Caso o cozimento tenha sido perfeito, exiba a frase "Parabéns! Arroz perfeito!" e, abaixo dela, a imagem de um bonito arroz;
+        Caso contrário, exiba a frase "Arroz cru ou cozido demais!" e, abaixo dela, a imagem de um arroz "empapado" ou queimado; -->
+
+        <h1>Avaliador de arrozes</h1>
+        <h3>Saiba a situação do cozimento de seu arroz abaixo.</h3>
+
+        <div>
+            <span>Digite o tempo de cozimento</span>
+        </div>
+        <div>
+            <input type="number" id="iptTempoCozimento">
+        </div>
+        <button onclick="provarArroz()">Provar arroz</button>
+        <div>
+            <h2 id="campoTexto"></h2>
+        </div>
+        <div>
+            <img id="campoImagem" style="width: 300px;">
+            <img id="campoImagem2" style="width: 300px;">
+        </div>
+</body>
+
+</html>
+
+<script>
+    function provarArroz() {
+        var tempo = Number(iptTempoCozimento.value);
+
+        if (tempo == 5) {
+            campoTexto.innerHTML = `Parabéns! Arroz perfeito!`;
+            document.getElementById("campoImagem").src = "images/arroz-perfeito.jpg"
+        }else{
+            campoTexto.innerHTML = `Arroz cru ou cozido demais!`;
+            document.getElementById("campoImagem").src = "images/arroz-papa.jpg";
+            document.getElementById("campoImagem2").src = "images/arroz-queimado.jpg"
+        }
+    }
+
+    function enunciado() {
+        campoEnunciado.innerHTML = `<div style="color: #707070;">7. Crie um programa em HTML/JS o qual:
+        a) Pergunta o tempo que deixou o arroz cozinhando;
+        b) Ao clicar em "Provar arroz", verifica se o cozimento foi perfeito. Um cozimento perfeito é de 5 minutos, exatamente;
+        c) Caso o cozimento tenha sido perfeito, exiba a frase "Parabéns! Arroz perfeito!" e, abaixo dela, a imagem de um bonito arroz;
+        Caso contrário, exiba a frase "Arroz cru ou cozido demais!" e, abaixo dela, a imagem de um arroz "empapado" ou queimado;</div>`
+    }
+</script>

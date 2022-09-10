@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 01</title>
+</head>
+<body>
+    <button onclick="enunciado()">Ver enunciado</button>
+    <div id="campoEnunciado"></div>
+    <!-- ENUNCIADO DA ATIVIDADE
+    1. Crie um programa em HTML/JS que auxilie uma Autoescola a identificar possíveis novos alunos:
+    a) Solicite o nome e a idade de uma pessoa;
+    b) Ao clicar no botão "Avaliar aluno", se a pessoa tiver 18 anos ou mais emita a mensagem "FULANO vamos tirar a CNH?"; Caso contrário emita a mensagem "FULANO, você possui X% da idade necessária para tirar a CNH, vá jogar Playstation!";
+    Obs: X deve ser comparado á 18.  -->
+
+    <h1>Sistema Autoescola</h1>
+    <h3>Quer simular sua situação na Autoescola? Vamos começar!</h3>
+    <div>
+        <span>Digite seu nome</span>
+    </div>
+    <div>
+        <input type="text" id="iptNome">
+    </div>
+    <div>
+        <span>Digite sua idade</span>
+    </div>
+    <div>
+        <input type="number" id="iptIdade">
+    </div>
+    <div>
+        <button onclick="avaliarAluno()">Avaliar aluno</button>
+    </div>
+    <div id="campoResultado"></div>
+</body>
+</html>
+<script>
+    function avaliarAluno() {
+        var nome = iptNome.value;
+        var idade = Number(iptIdade.value);
+
+        if (idade >= 18) {
+            campoResultado.innerHTML = `${nome}, vamos tirar a CNH?`
+        }else{
+            var porcentagem = (idade / 18) * 100;
+
+            campoResultado.innerHTML = `${nome}, você possui ${porcentagem.toFixed(1)}% da idade necessária para tirar a CNH, vá jogar Playstation!`
+        }
+    }
+
+    function enunciado() {
+        campoEnunciado.innerHTML = `<div style="color: #707070;">1. Crie um programa em HTML/JS que auxilie uma Autoescola a identificar possíveis novos alunos:
+        a) Solicite o nome e a idade de uma pessoa;
+        b) Ao clicar no botão "Avaliar aluno", se a pessoa tiver 18 anos ou mais emita a mensagem "FULANO vamos tirar a CNH?"; Caso contrário emita a mensagem "FULANO, você possui X% da idade necessária para tirar a CNH, vá jogar Playstation!";
+        Obs: X deve ser comparado á 18.</div>`
+    }
+</script>

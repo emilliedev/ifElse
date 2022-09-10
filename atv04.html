@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 04</title>
+</head>
+
+<body>
+    <div id="campoEnunciado"></div>
+    <button onclick="enunciado()">Ver enunciado</button>
+
+    <!-- ENUNCIADO DA ATIVIDADE 
+    4.Refaça a questão anterior de tal forma que o valor máximo por amigo não seja fixo em 20,00, mas que seja um campo informado pelo usuário na página. Use esse valor para saber se vai mostrar a frase de lamento ou de compra da pizza. -->
+
+    <div>Digite o valor da pizza</div>
+    <div><input type="number" id="iptValorPizza">
+    </div>
+    <div>Digite a quantidade de amigos</div>
+    <div><input type="number" id="iptQtdeAmigos">
+    </div>
+    <div>Digite o limite desejado do valor por amigo</div>
+    <div><input type="number" id="iptLimitePorAmigo"></div>
+    <button onclick="calcularTotal()">Rola a pizza?</button>
+    <div id="divResultado"></div>
+</body>
+</html>
+
+<script>
+    function calcularTotal() {
+        var valorPizza = Number(iptValorPizza.value);
+        var qtdeAmigos = Number(iptQtdeAmigos.value);
+        var limite = Number(iptLimitePorAmigo.value);
+
+        var divisao = valorPizza / qtdeAmigos;
+
+        divResultado.innerHTML = `Cada amigo vai pagar R$${divisao}`
+
+        if (divisao > limite) {
+            divResultado.innerHTML += `<br>Deu ruim! Pizza muito cara!`
+        }else{
+            divResultado.innerHTML += `<br>Uhu! Vamos pedir a pizza!`
+        }
+    }
+
+    function enunciado() {
+        campoEnunciado.innerHTML = `<div style="color: #707070;">4.Refaça a questão anterior de tal forma que o valor máximo por amigo não seja fixo em 20,00, mas que seja um campo informado pelo usuário na página. Use esse valor para saber se vai mostrar a frase de lamento ou de compra da pizza.</div>`
+    }
+</script>
