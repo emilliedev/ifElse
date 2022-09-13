@@ -35,14 +35,13 @@
 </html>
 
 <script>
-    var imagem;
     function analisarFrequencia() {
         var frequencia = iptFrequencia.value;
         if (frequencia < 50) {
-            imagem = document.getElementById("campoImagem").src = "images/turista.jpg";
+            campoImagem.src = "campoImagem".src = "images/turista.jpg"
             campoTexto.innerHTML = `Continue assim e a única viagem que fará é de só ida para a Repetentelândia!`
         }else{
-            imagem = document.getElementById("campoImagem").src = "images/einstein.jpg";
+            campoImagem.src = "images/einstein.jpg"
             campoTexto.innerHTML = `Parabéns por fazer sua obrigação!`
         }
     }

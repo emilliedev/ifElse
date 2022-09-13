@@ -47,10 +47,12 @@
 
         if (temperatura < 10) {
             campoTexto.innerHTML = `<div style="color: #02bf44">Clima apropriado para conservar alimento</div>`
-            document.getElementById("campoImagem").src = 'images/tomate-fresco.jpg'
+
+            campoImagem.src = "images/tomate-fresco.jpg"
         }else{
             campoTexto.innerHTML = `<div style="color: #bf022e">Clima inapropriado para conservar alimento</div>`
-            document.getElementById("campoImagem").src = 'images/tomate-estragado.jpg'
+
+            campoImagem.src = "images/tomate-estragado.jpg"
         }
     }
 

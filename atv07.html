@@ -46,11 +46,14 @@
 
         if (tempo == 5) {
             campoTexto.innerHTML = `Parabéns! Arroz perfeito!`;
-            document.getElementById("campoImagem").src = "images/arroz-perfeito.jpg"
+
+            campoImagem.src = "images/arroz-perfeito.jpg"
         }else{
             campoTexto.innerHTML = `Arroz cru ou cozido demais!`;
-            document.getElementById("campoImagem").src = "images/arroz-papa.jpg";
-            document.getElementById("campoImagem2").src = "images/arroz-queimado.jpg"
+
+            campoImagem.src  ="images/arroz-papa.jpg";
+
+            campoImagem2.src = "images/arroz-queimado.jpg"
         }
     }
 

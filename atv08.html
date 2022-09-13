@@ -60,19 +60,22 @@
 
         console.log(mediaGolsPartida)
 
-        if (mediaGolsPartida < 0.7 ) {
-            campoTexto.innerHTML = `Atacante mediano`;
-            document.getElementById("campoImagem").src = "images/jogador-mediano.jpg"
-            if (mediaGolsPartida < 0.2) {
-                campoTexto.innerHTML = `Melhor mudar de posição`;
-                document.getElementById("campoImagem").src = "images/jogador-ruim.jpg";
-            }
-                }else{
-                    campoTexto.innerHTML = `Atacante de futuro`;
-                    document.getElementById("campoImagem").src = "images/jogador-futuro.jpeg"
-                }
+        if (mediaGolsPartida < 0.2) {
+            campoTexto.innerHTML = `Melhor mudar de posição`;
 
-        campoMediaTexto.innerHTML += `Sua média de gols por partida é de ${mediaGolsPartida.toFixed(1)}`
+            campoImagem.src = "images/jogador-ruim.jpg";
+        }else{
+            if (mediaGolsPartida <= 0.6) {
+                campoTexto.innerHTML = `Atacante mediano`;
+
+                campoImagem.src = "images/jogador-mediano.jpg"
+            }else{
+                campoTexto.innerHTML = `Atacante de futuro`;
+                campoImagem.src = "images/jogador-futuro.jpeg"
+            }
+        }
+
+        campoMediaTexto.innerHTML = `Sua média de gols por partida é de ${mediaGolsPartida.toFixed(1)}`
     }
 
     function enunciado() {
